@@ -386,6 +386,14 @@ export default function App() {
         <p>
           Disclaimer: Ovaj kalkulator bi trebao biti točan, ali moguće da se u svakom trenutku pokvari (zbog promjene
           zakona ili promjena na TEB strani), pa se nemoj oslanjati samo na ovaj izračun.
+          <br />
+          <a
+            href="https://github.com/DarkoKukovec/bruto-calculator"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Izvorni kod
+          </a>
         </p>
       </div>
     </div>
