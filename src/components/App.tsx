@@ -1,7 +1,6 @@
 import { Chart } from 'react-google-charts';
 import * as React from 'react';
 import { useObserver, useLocalStore } from 'mobx-react';
-import './styles.css';
 import { initial } from '../constants/initial';
 import { chart, fields as detailFields } from '../constants/details';
 import { fields } from '../constants/fields';
@@ -109,7 +108,7 @@ export default function App() {
   }));
 
   const getOptimization = (type: string) => {
-    return state.optimisations.find((item: any) => item.type === type) as any;
+    return state.optimisations.find((item: any) => item.type === type);
   };
 
   React.useEffect(() => {
