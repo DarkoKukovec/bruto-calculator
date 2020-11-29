@@ -1,0 +1,187 @@
+html {
+  background: #13161f;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+    'Helvetica Neue', sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+label {
+  display: block;
+  padding: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.field {
+  display: block;
+  padding: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.field span {
+  width: 130px;
+  text-align: right;
+}
+
+.field span:first-child {
+  width: 212px;
+  text-align: left;
+}
+
+label span {
+  width: 200px;
+}
+
+label input[type='number'] {
+  width: 120px;
+  margin-left: 10px;
+}
+
+input[type='checkbox'] {
+  margin-right: 8px;
+}
+
+input[type='checkbox'] ~ span {
+  width: 180px;
+}
+
+label select {
+  width: 160px;
+  margin-left: 10px;
+}
+
+label small,
+.field small {
+  display: inline-block;
+  flex: 1;
+  margin-left: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+input,
+select {
+  background: #13161f;
+  color: #fff;
+  border: 1px solid #67788a;
+  padding: 2px 4px;
+  border-radius: 2px;
+}
+
+input[disabled],
+select[disabled] {
+  border-color: transparent;
+}
+
+.dodaci input[disabled] {
+  color: #777;
+}
+
+fieldset {
+  border: 1px solid #67788a;
+  border-radius: 4px;
+}
+
+fieldset small {
+  float: right;
+}
+
+a {
+  color: #1f9ad8;
+}
+
+.container {
+  width: 800px;
+  margin: 16px auto;
+}
+
+.chart-container {
+  margin-bottom: 16px;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.highlighted {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#detalji {
+  width: 320px;
+}
+
+label[for='detalji'] {
+  float: right;
+}
+
+.field span:last-child,
+.field input[type='number'] {
+  width: 120px;
+  text-align: right;
+}
+
+@media (max-width: 800px) {
+  .container {
+    margin: 4px;
+    width: 100%;
+  }
+
+  .chart-container {
+    display: none;
+  }
+
+  p {
+    font-size: 14px;
+    padding: 0 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  label small,
+  fieldset small {
+    display: none;
+  }
+
+  label span {
+    width: 100px;
+    font-size: 12px;
+  }
+
+  .field span:first-child {
+    width: 130px;
+    font-size: 12px;
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+  #detalji {
+    width: auto;
+  }
+
+  input[type='checkbox'] ~ span {
+    min-width: 100px;
+    width: auto;
+  }
+}
