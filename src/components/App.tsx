@@ -133,16 +133,6 @@ export default function App() {
     }
   });
 
-  const onStanToggle = (e: boolean) => {
-    getOptimization('stan').enabled = e;
-    getOptimization('podstanar').enabled = false;
-  };
-
-  const onPodstanarToggle = (e: boolean) => {
-    getOptimization('podstanar').enabled = e;
-    getOptimization('stan').enabled = false;
-  };
-
   return useObserver(() => (
     <div className="wrapper">
       <div className="container">
@@ -248,17 +238,17 @@ export default function App() {
             <Neoporezivi
               disabled={!getOptimization('stan').enabled}
               amount={getOptimization('stan').amount}
-              title="Naknada za smještaj i hranu"
+              title="Naknada za hranu"
               description="Maksimalno 5000kn/god, 400kn/mj"
-              onToggle={onStanToggle}
+              onToggle={(e: boolean) => (getOptimization('stan').enabled = e)}
               onChange={(e: number) => (getOptimization('stan').amount = e)}
             />
             <Neoporezivi
               disabled={!getOptimization('podstanar').enabled}
               amount={getOptimization('podstanar').amount}
               title="Plaćanje najma stana"
-              description="Ako je ovo odabrano, nije mogući odabir stanovanja/prehrane"
-              onToggle={onPodstanarToggle}
+              description=""
+              onToggle={(e: boolean) => (getOptimization('podstanar').enabled = e)}
               onChange={(e: number) => (getOptimization('podstanar').amount = e)}
             />
             <Neoporezivi
@@ -387,11 +377,7 @@ export default function App() {
           Disclaimer: Ovaj kalkulator bi trebao biti točan, ali moguće da se u svakom trenutku pokvari (zbog promjene
           zakona ili promjena na TEB strani), pa se nemoj oslanjati samo na ovaj izračun.
           <br />
-          <a
-            href="https://github.com/DarkoKukovec/bruto-calculator"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://github.com/DarkoKukovec/bruto-calculator" target="_blank" rel="noopener noreferrer">
             Izvorni kod
           </a>
         </p>
