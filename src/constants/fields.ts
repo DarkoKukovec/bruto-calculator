@@ -50,9 +50,9 @@ export const fields = [
     description: 'Dobiva se u obliku povrata poreza sredinom sljedeće kalendarske godine',
   },
   {
-    title: 'Potencijalna povišica 2021',
+    title: 'Povišica 2021',
     property: 'korekcija2021',
     description:
-      '<a href="https://www.poslovni.hr/hrvatska/vlada-najavljuje-porezno-rasterecenje-evo-koliko-bi-trebale-rasti-place-4245848" target="_blank" rel="noopener noreferrer">Ništa službeno, samo nagađanja za sada</a>',
+      '<a href="https://kagor.hr/racunovodstvo/porezna-reforma-2021-promjene-propisa-u-primjeni-od-01-01-2021/" target="_blank" rel="noopener noreferrer">Dobiveno poreznim rasterećenjem koje je na snazi od 1.1.2021.</a>',
   },
 ];
