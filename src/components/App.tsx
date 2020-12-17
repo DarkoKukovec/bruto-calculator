@@ -103,7 +103,11 @@ export default function App() {
     },
 
     get korekcija2021() {
-      return this.p36 - this.p36 / 1.2 + this.p24 - this.p24 / 1.2;
+      return (this.p36 - this.p36 / 1.2 + this.p24 - this.p24 / 1.2) * 1.18;
+    },
+
+    get racun2021() {
+      return this.racun + this.korekcija2021;
     },
   }));
 

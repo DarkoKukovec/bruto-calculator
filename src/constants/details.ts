@@ -52,8 +52,20 @@ export const chart = [
 ];
 
 export const fields = [
-  ['trosak', 'bruto1', 'neto', 'davanja', 'racun', 'povrat', 'korekcija2021'],
-  ['trosak', 'bruto1', 'neto', 'brutoDoprinosi', 'doprinosi', 'porez', 'prirez', 'racun', 'povrat', 'korekcija2021'],
+  ['trosak', 'bruto1', 'neto', 'davanja', 'racun', 'povrat', 'korekcija2021', 'racun2021'],
+  [
+    'trosak',
+    'bruto1',
+    'neto',
+    'brutoDoprinosi',
+    'doprinosi',
+    'porez',
+    'prirez',
+    'racun',
+    'povrat',
+    'korekcija2021',
+    'racun2021',
+  ],
   [
     'trosak',
     'bruto1',
@@ -67,5 +79,6 @@ export const fields = [
     'racun',
     'povrat',
     'korekcija2021',
+    'racun2021',
   ],
 ];

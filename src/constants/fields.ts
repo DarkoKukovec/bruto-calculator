@@ -55,4 +55,8 @@ export const fields = [
     description:
       '<a href="https://kagor.hr/racunovodstvo/porezna-reforma-2021-promjene-propisa-u-primjeni-od-01-01-2021/" target="_blank" rel="noopener noreferrer">Dobiveno poreznim rasterećenjem koje je na snazi od 1.1.2021.</a>',
   },
+  {
+    title: 'Sjeda na račun od 2021',
+    property: 'racun2021',
+  },
 ];
