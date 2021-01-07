@@ -9,7 +9,7 @@ import { Neoporezivi } from './Neoporezivi';
 declare var window: Window & {
   stopeprireza: Array<any>;
   tipobracuna: number;
-  PlacaObracun2019: () => void;
+  PlacaObracun2020: () => void;
   $: (selector: string) => any;
 };
 
@@ -32,8 +32,6 @@ export default function App() {
     prirez: 0,
     porez: 0,
     age: 2,
-    p24: 0,
-    p36: 0,
 
     get brutoDoprinosi() {
       return this.mladaOsoba ? 0 : this._brutoDoprinosi;
@@ -124,16 +122,18 @@ export default function App() {
       window.tipobracuna = 2;
       window.$('#cboPrirez option:selected').data('meta', stope.find((item) => item.id === state.stopa).stopa);
 
-      window.PlacaObracun2019();
-      state.neto = getVal('#labNeto');
+      window.PlacaObracun2020();
+      const p24 = getVal('#labP24');
+      const p36 = getVal('#labP36');
+      const korekcija2021 = (p36 - p36 / 1.2 + p24 - p24 / 1.2) * 1.18;
+
+      state.neto = getVal('#labNeto') + korekcija2021;
+      state.porez = getVal('#labPorez') - korekcija2021;
       state.oporezivo = getVal('#labOporezivo');
       state.odbitak = getVal('#labOsobnaOlaksica');
       state.dohodak = getVal('#labDohodak');
       state._brutoDoprinosi = getVal('#labDopZO');
       state.prirez = getVal('#labPrirez');
-      state.porez = getVal('#labPorez');
-      state.p24 = getVal('#labP24');
-      state.p36 = getVal('#labP36');
     }
   });
 
