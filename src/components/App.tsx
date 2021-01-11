@@ -7,14 +7,14 @@ import { fields } from '../constants/fields';
 import { Neoporezivi } from './Neoporezivi';
 
 declare var window: Window & {
-  stopeprireza: Array<any>;
+  stopeprireza2021: Array<any>;
   tipobracuna: number;
-  PlacaObracun2020: () => void;
+  PlacaObracun2021: () => void;
   $: (selector: string) => any;
 };
 
 // Remapiranje stopa jer TEB nema unique IDeve
-const stope = window.stopeprireza.slice().map((item, index) => ({ ...item, id: index }));
+const stope = window.stopeprireza2021.slice().map((item, index) => ({ ...item, id: index }));
 
 function getVal(selector: string): number {
   const targetEl = document.querySelector<HTMLDivElement>(selector);
@@ -122,13 +122,10 @@ export default function App() {
       window.tipobracuna = 2;
       window.$('#cboPrirez option:selected').data('meta', stope.find((item) => item.id === state.stopa).stopa);
 
-      window.PlacaObracun2020();
-      const p24 = getVal('#labP24');
-      const p36 = getVal('#labP36');
-      const korekcija2021 = (p36 - p36 / 1.2 + p24 - p24 / 1.2) * 1.18;
+      window.PlacaObracun2021();
 
-      state.neto = getVal('#labNeto') + korekcija2021;
-      state.porez = getVal('#labPorez') - korekcija2021;
+      state.neto = getVal('#labNeto');
+      state.porez = getVal('#labPorez');
       state.oporezivo = getVal('#labOporezivo');
       state.odbitak = getVal('#labOsobnaOlaksica');
       state.dohodak = getVal('#labDohodak');
@@ -278,7 +275,7 @@ export default function App() {
             <small>
               Bazirano na{' '}
               <a
-                href="https://www.teb.hr/kalkulatori/kalkulator-place-od-112020/"
+                href="https://www.teb.hr/kalkulatori/kalkulator-place-od-112021/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
