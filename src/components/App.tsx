@@ -21,6 +21,13 @@ function getVal(selector: string): number {
   return targetEl ? parseFloat(targetEl.innerText.replace(/\./g, '').replace(',', '.')) : 0;
 }
 
+const formatterInstance = new Intl.NumberFormat('hr-HR', { style: 'currency', currency: 'HRK' });
+
+function formatter(ammount: number): string {
+  return formatterInstance.format(ammount);
+  // return ammount;
+}
+
 export default function App() {
   const state: any = useLocalStore(() => ({
     ...initial,
@@ -202,7 +209,7 @@ export default function App() {
                 <div className="field" key={field.property}>
                   <span>{field.title}:</span>
                   <span className={field.highlighted ? 'highlighted' : undefined}>
-                    {state[field.property].formatMoney()}
+                    {formatter(state[field.property])}
                   </span>
                   <small dangerouslySetInnerHTML={{ __html: field.description || '' }} />
                 </div>
