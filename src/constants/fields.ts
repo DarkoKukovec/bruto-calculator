@@ -43,7 +43,7 @@ export const fields = [
     title: 'Sjeda na račun (odmah)',
     property: 'racun',
     highlighted: true,
-    description: 'Uključuje promjene vezane uz poreznu reformu koja je na snazi od 1.1.2021.',
+    // description: 'Uključuje promjene vezane uz poreznu reformu koja je na snazi od 1.1.2021.',
   },
   {
     title: 'Olakšica za mlade',
